@@ -1,20 +1,13 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>关于WPF的xaml | Noodlesoup</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://zivkidd.github.io/favicon.ico?v=1617198685857">
+<link rel="shortcut icon" href="https://zivkidd.github.io/favicon.ico?v=1617199237460">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://zivkidd.github.io/styles/main.css">
-
-
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="alternate" type="application/atom+xml" title="关于WPF的xaml | Noodlesoup - Atom Feed" href="https://zivkidd.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
@@ -22,85 +15,86 @@
 
 App.xaml分支:程序的主体。大家知道，在 Windows系统里，一个程序就是一个进程(Process)。Windows还规定，一个GUI进程需要有一个窗体(Window)作为“主窗体”。App.xaml文件的作用就..." />
     <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://zivkidd.github.io">
-        <img src="https://zivkidd.github.io/images/avatar.png?v=1617198685857" class="site-logo">
-        <h1 class="site-title">Noodlesoup</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://zivkidd.github.io">
+  <img class="avatar" src="https://zivkidd.github.io/images/avatar.png?v=1617199237460" alt="">
+  </a>
+  <h1 class="site-title">
+    Noodlesoup
+  </h1>
+  <p class="site-description">
+    emm noodlesoup
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-    </div>
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
-          <a class="social-link" href="https://github.com/ZivKidd" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
+        <a href="https://github.com/ZivKidd" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-    </div>
-    <div class="site-description">
-      emm noodlesoup
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zivkidd.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">关于WPF的xaml</h2>
-            <div class="post-date">2021-03-31</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              关于WPF的xaml
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-03-31
+              </span>
+              <span>
+                21 min read
+              </span>
+              
+            </div>
             
-            <div class="post-content" v-pre>
-              <h1 id="1-wpf项目">1. wpf项目</h1>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="1-wpf项目">1. wpf项目</h1>
 <ol>
 <li>App.xaml分支:程序的主体。大家知道，在 Windows系统里，一个程序就是一个进程(Process)。Windows还规定，一个GUI进程需要有一个窗体(Window)作为“主窗体”。App.xaml文件的作用就是声明了程序的进程会是谁，同时指定了程序的主窗体是谁。在这个分支里还有一个文件——App.xaml.cs，它是App.xaml的后台代码。</li>
 <li>MainWindow.xaml分支:程序的主窗体。</li>
@@ -423,50 +417,99 @@ Margin=&quot;5&quot;/&gt;
 <p>通过更换ControlTemplate改变控件外观，使之具有更优的用户使用体验及外观。</p>
 <p>借助ControlTemplate，程序员与设计师可以并行工作，程序员可以先用WPF标准控件进行编程，等设计师的工作完成后，只需把新的ControlTemplate应用到程序中就可以了。</p>
 
-            </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://zivkidd.github.io/post/python-lian-jie-sql-server-shu-ju-ku/">
-                  <h3 class="post-title">
-                    python连接SQL Server数据库
-                  </h3>
-                </a>
               </div>
-            
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#1-wpf%E9%A1%B9%E7%9B%AE">1. wpf项目</a></li>
+<li><a href="#2-xamlextensible-application-markup-language%E7%9A%84%E6%9C%80%E5%9F%BA%E6%9C%AC%E6%9E%84%E6%88%90">2. xaml(extensible application markup language)的最基本构成</a></li>
+<li><a href="#3-%E5%85%B3%E4%BA%8Exmlns">3. 关于xmlns</a></li>
+<li><a href="#4-xaml%E4%B8%AD%E5%BC%95%E7%94%A8%E7%B1%BB%E5%BA%93">4. xaml中引用类库</a></li>
+<li><a href="#5-x%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">5. x命名空间</a>
+<ul>
+<li><a href="#51-xname">5.1  x:Name</a></li>
+<li><a href="#52-xfieldmodifier">5.2  x:FieldModifier</a></li>
+</ul>
+</li>
+<li><a href="#6-%E5%B8%83%E5%B1%80%E5%85%83%E7%B4%A0">6. 布局元素</a>
+<ul>
+<li><a href="#61-grid%E7%BD%91%E6%A0%BC">6.1  Grid:网格</a></li>
+<li><a href="#62-stackpanel%E6%A0%88%E5%BC%8F%E9%9D%A2%E6%9D%BF">6.2  StackPanel:栈式面板</a></li>
+<li><a href="#63-canvas%E7%94%BB%E5%B8%83">6.3  Canvas:画布</a></li>
+<li><a href="#64-dockpanel%E6%B3%8A%E9%9D%A0%E5%BC%8F%E9%9D%A2%E6%9D%BF">6.4  DockPanel:泊靠式面板</a></li>
+<li><a href="#65-wrappanel%E8%87%AA%E5%8A%A8%E6%8A%98%E8%A1%8C%E9%9D%A2%E6%9D%BF">6.5  WrapPanel:自动折行面板</a></li>
+</ul>
+</li>
+<li><a href="#7-binding">7. Binding</a></li>
+<li><a href="#8%E6%A8%A1%E6%9D%BF">8.模板</a></li>
+</ul>
 
-            
-
-          </div>
-
+              </div>
+            </div>
+          </article>
         </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://zivkidd.github.io/post/python-lian-jie-sql-server-shu-ju-ku/">
+              <h3 class="post-title">
+                python连接SQL Server数据库
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://zivkidd.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
       </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+    <script>
+      hljs.initHighlightingOnLoad()
 
-AOS.init();
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
-</script>
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad()
-  </script>
-
-
-
-
-
+    </script>
   </body>
 </html>
