@@ -1,22 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://zivkidd.github.io</id>
-    <title>Noodlesoup</title>
-    <updated>2021-03-31T13:52:16.851Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://zivkidd.github.io"/>
-    <link rel="self" href="https://zivkidd.github.io/atom.xml"/>
-    <subtitle>emm noodlesoup</subtitle>
-    <logo>https://zivkidd.github.io/images/avatar.png</logo>
-    <icon>https://zivkidd.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Noodlesoup</rights>
-    <entry>
-        <title type="html"><![CDATA[关于WPF的xaml]]></title>
-        <id>https://zivkidd.github.io/post/guan-yu-wpf-de-xaml/</id>
-        <link href="https://zivkidd.github.io/post/guan-yu-wpf-de-xaml/">
-        </link>
-        <updated>2021-03-31T13:38:22.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="1-wpf项目">1. wpf项目</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>关于WPF的xaml | Noodlesoup</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zivkidd.github.io/favicon.ico?v=1617198685857">
+<link rel="stylesheet" href="https://zivkidd.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="1. wpf项目
+
+App.xaml分支:程序的主体。大家知道，在 Windows系统里，一个程序就是一个进程(Process)。Windows还规定，一个GUI进程需要有一个窗体(Window)作为“主窗体”。App.xaml文件的作用就..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zivkidd.github.io">
+        <img src="https://zivkidd.github.io/images/avatar.png?v=1617198685857" class="site-logo">
+        <h1 class="site-title">Noodlesoup</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/ZivKidd" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      emm noodlesoup
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zivkidd.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">关于WPF的xaml</h2>
+            <div class="post-date">2021-03-31</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="1-wpf项目">1. wpf项目</h1>
 <ol>
 <li>App.xaml分支:程序的主体。大家知道，在 Windows系统里，一个程序就是一个进程(Process)。Windows还规定，一个GUI进程需要有一个窗体(Window)作为“主窗体”。App.xaml文件的作用就是声明了程序的进程会是谁，同时指定了程序的主窗体是谁。在这个分支里还有一个文件——App.xaml.cs，它是App.xaml的后台代码。</li>
 <li>MainWindow.xaml分支:程序的主窗体。</li>
@@ -338,173 +422,51 @@ Margin=&quot;5&quot;/&gt;
 <p><strong>实际项目中，ControlTemplate 主要有两大用武之地:</strong></p>
 <p>通过更换ControlTemplate改变控件外观，使之具有更优的用户使用体验及外观。</p>
 <p>借助ControlTemplate，程序员与设计师可以并行工作，程序员可以先用WPF标准控件进行编程，等设计师的工作完成后，只需把新的ControlTemplate应用到程序中就可以了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[python连接SQL Server数据库]]></title>
-        <id>https://zivkidd.github.io/post/python-lian-jie-sql-server-shu-ju-ku/</id>
-        <link href="https://zivkidd.github.io/post/python-lian-jie-sql-server-shu-ju-ku/">
-        </link>
-        <updated>2021-03-31T13:36:14.000Z</updated>
-        <content type="html"><![CDATA[<p>通常有两个库推荐，pyodbc和pymssql，pymssql对中文非常不友好<br>
-使用pyodbc之前在电脑搜索odbc数据源管理程序<br>
-<img src="https://zivkidd.github.io/post-images/1617197811890.png" alt="" loading="lazy"><br>
-点击添加新数据源<br>
-这里会显示可用的数据源的驱动程序<br>
-然后就可以在python里</p>
-<pre><code class="language-python">import pyodbc
-conn = pyodbc.connect('DRIVER={数据源的驱动程序如SQL Server Native Client 11.0};SERVER=IP;DATABASE=数据库名称;UID=用户名;PWD=密码')
-cur=conn.cursor()
-cur.execute('select top 1000 * from [dbo].[ZJB_TaskInfo]')
-results=cur.fetchall()
-</code></pre>
-<p>这样就可以通过发送sql语句与数据库进行交互</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[利用shapefile切割遥感影像对应区域——QGIS与python gdal结合]]></title>
-        <id>https://zivkidd.github.io/post/li-yong-shapefile-qie-ge-yao-gan-ying-xiang-dui-ying-qu-yu-qgis-yu-python-gdal-jie-he/</id>
-        <link href="https://zivkidd.github.io/post/li-yong-shapefile-qie-ge-yao-gan-ying-xiang-dui-ying-qu-yu-qgis-yu-python-gdal-jie-he/">
-        </link>
-        <updated>2021-03-31T13:34:27.000Z</updated>
-        <content type="html"><![CDATA[<p>主要要做的就是有一个大的tif，可能长20w个像素，宽10w个像素这种，然后给一些shp文件，按shp文件切割得到对应的图像分割训练需要的image和mask</p>
-<h1 id="第一步就是mask怎么生成">第一步就是mask怎么生成</h1>
-<ol>
-<li>可以先在QGIS里用shp生成对应的影像，把shapefile转换成和对应影像同样分辨率、同样边界的影像（这个对于非常大的影像是很有用的，因为这时不可能在内存里生成一张那么大的影像，只能是先生成tif）<br>
-<img src="https://zivkidd.github.io/post-images/1617197739362.png" alt="" loading="lazy"></li>
-<li>可以直接在python里把shape画出来，适用于比较小的影像，这样可以少一些在qgis的操作</li>
-</ol>
-<h1 id="第二步就是在python里切割">第二步就是在python里切割</h1>
-<ol>
-<li>可以用pyshp读shape文件（路径不能包含中文），用gdal读遥感影像（gdal在conda中装会比较容易成功，conda install gdal）</li>
-</ol>
-<p>有一些python处理的脚本可以看看<a href="https://github.com/ZivKidd/GIS_TIFF_SHP_process">github地址</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于GNSS和RTK]]></title>
-        <id>https://zivkidd.github.io/post/guan-yu-gnss-he-rtk/</id>
-        <link href="https://zivkidd.github.io/post/guan-yu-gnss-he-rtk/">
-        </link>
-        <updated>2021-03-31T13:33:45.000Z</updated>
-        <content type="html"><![CDATA[<p>RTK采用的实时定位技术，可以在流动站随时看到测量点的坐标以及精度情况；PPK定位属于后处理定位,在现场看不到点的坐标，需要事后处理才能看到结果。<br>
-来自 <a href="https://www.sohu.com/a/247375413_769730">https://www.sohu.com/a/247375413_769730</a><br>
-RTK可以自己架基站在已知点上，或者连接cors，千寻的cors价格在2000/年，可以全国通用，但在连cors时初始化需要比较久，在树木遮挡下有时候很差，所以用自己的基站比较好，精度基本在水平2cm，高度4cm<br>
-PPK不能用cors，要两个接收机，一个做基站，一个流动站，但是需要后期解算，精度很高，能到毫米</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[利用libtiff.net进行BigTiff的读写]]></title>
-        <id>https://zivkidd.github.io/post/li-yong-libtiffnet-jin-xing-bigtiff-de-du-xie/</id>
-        <link href="https://zivkidd.github.io/post/li-yong-libtiffnet-jin-xing-bigtiff-de-du-xie/">
-        </link>
-        <updated>2021-03-31T13:28:55.000Z</updated>
-        <content type="html"><![CDATA[<p>读入多张tif影像水平拼接成bigtiff</p>
-<pre><code class="language-csharp">using (Tiff bigTiff = Tiff.Open(@&quot;D:\desktop\test\新建文件夹 (17)\5.tif&quot;, &quot;w&quot;))
-{
-    int originalImageWidth = 0, originalImageHeight = 0;
-    using (Tiff image = Tiff.Open(singleComparisonJobConfig.IntensityImageFilePathList[0], &quot;r&quot;))
-    {
-        originalImageWidth = image.GetField(TiffTag.IMAGEWIDTH)[0].ToInt();
-        originalImageHeight = image.GetField(TiffTag.IMAGELENGTH)[0].ToInt();
-    }
 
-    bigTiff.SetField(
-        TiffTag.IMAGEWIDTH,
-        singleComparisonJobConfig.IntensityImageFilePathList.Count * originalImageWidth);
-    bigTiff.SetField(TiffTag.IMAGELENGTH, originalImageHeight);
-    bigTiff.SetField(TiffTag.PHOTOMETRIC, Photometric.MINISBLACK);
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zivkidd.github.io/post/python-lian-jie-sql-server-shu-ju-ku/">
+                  <h3 class="post-title">
+                    python连接SQL Server数据库
+                  </h3>
+                </a>
+              </div>
+            
 
-    bigTiff.SetField(TiffTag.BITSPERSAMPLE, 8);
-    bigTiff.SetField(TiffTag.SAMPLESPERPIXEL, 1);
+            
 
-    // 这个参数很关键
-    // The default is 2 * *32 - 1, which is effectively infinity. That is, the entire image is one strip. 
-    // Use of a single strip is not recommended.Choose RowsPerStrip such that each strip is about 8K bytes, even if the data is not compressed, 
-    // since it makes buffering simpler for readers.The 8K value is fairly arbitrary, but seems to work well.
-    bigTiff.SetField(TiffTag.ROWSPERSTRIP, 1);
-    bigTiff.SetField(TiffTag.COMPRESSION, Compression.NONE);
-    bigTiff.SetField(TiffTag.PLANARCONFIG, PlanarConfig.CONTIG);
+          </div>
 
-    // TILEWIDTH TILELENGTH要是16的倍数
-    // bigTiff.SetField(TiffTag.TILEWIDTH, 5120);
-    // bigTiff.SetField(TiffTag.TILELENGTH, 10240);
-    // bigTiff.SetField(TiffTag.TILEDEPTH, 10240);
+        </div>
+      </div>
+    </div>
 
-    // var a = bigTiff.TileSize();
-    Tiff[] originalImages = new Tiff[singleComparisonJobConfig.IntensityImageFilePathList.Count];
-    for (int i = 0; i &lt; singleComparisonJobConfig.IntensityImageFilePathList.Count; i++)
-    {
-        originalImages[i] = Tiff.Open(singleComparisonJobConfig.IntensityImageFilePathList[i], &quot;r&quot;);
-    }
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
 
-    byte[] newBuff =
-        new byte[originalImageWidth * singleComparisonJobConfig.IntensityImageFilePathList.Count];
-    byte[] buffer = new byte[originalImageWidth];
-    for (int j = 0; j &lt; originalImageHeight; j++)
-    {
-        Console.WriteLine(j);
-        Console.WriteLine(DateTime.Now);
-        for (int i = 0; i &lt; singleComparisonJobConfig.IntensityImageFilePathList.Count; i++)
-        {
-            originalImages[i].ReadScanline(buffer, j);
-            Buffer.BlockCopy(buffer, 0, newBuff, i * originalImageWidth, originalImageWidth * sizeof(byte));
-        }
+AOS.init();
 
-        bigTiff.WriteScanline(newBuff, j);
-    }
-    bigTiff.WriteDirectory();
-    bigTiff.Close();
-}
-</code></pre>
-<p>strip这个参数很关键，如果文件很大，比如超过4g，不设置strip的话会导致libtiff.net报错，所以一般是一个strip为8000个byte，这样设置读的比较快<br>
-1）简单的文件，1个Strip足以。<br>
-2）每个Strip大小是相同的。<br>
-3）出于某种目的，文件可以分成若干Strip。<br>
-4）Script需要对齐处理。<br>
-5）文件有两种基本分块模式 Strip，Tile<br>
-Strip 高度方向分块<br>
-Tile  像打豆腐一样分块</p>
-<p>分块就是若干字节（若干行）写一次；<br>
-并且要记录每一块，写的位置。<br>
-Some manufacturers make life difficult by writing large amounts of uncompressed data as a single strip. This is contrary to the recommendations of the spec. The following makes an attempt at breaking such images into strips closer to the recommended 8k bytes. A side effect, however, is that the RowsPerStrip tag value may be changed.</p>
-<p>在wpf展示bigtiff（只读一些行，直接用bitmap加载会报错，所以有缩放功能时需要自己判断读入哪些行）</p>
-<pre><code class="language-csharp">using (Tiff bigTiff = Tiff.Open(@&quot;D:\desktop\test\新建文件夹 (17)\5.tif&quot;, &quot;r&quot;))
-{
-    int originalImageWidth = bigTiff.GetField(TiffTag.IMAGEWIDTH)[0].ToInt();
-    int originalImageHeight = bigTiff.GetField(TiffTag.IMAGELENGTH)[0].ToInt();
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-    double canvasHeight = grid.Height;
-    int skip = Convert.ToInt32(originalImageHeight / canvasHeight);
-    int resizedHeight = Convert.ToInt32(canvasHeight);
-    int resizedWidth = Convert.ToInt32(originalImageWidth / skip);
+</script>
 
-    byte[,] bufferRect = new byte[resizedHeight, resizedWidth];
-    byte[] buffer = new byte[originalImageWidth];
-    for (int j = 0; j &lt; originalImageHeight; j += skip)
-    {
-        bigTiff.ReadScanline(buffer, j);
-        for (int i = 0; i / skip &lt; resizedWidth; i += skip)
-        {
-            bufferRect[j / skip, i / skip] = buffer[i];
-        }
-    }
 
-    byte[] bufferRectFlatten = new byte[resizedHeight * resizedWidth];
-    Buffer.BlockCopy(bufferRect, 0, bufferRectFlatten, 0, resizedHeight * resizedWidth * sizeof(byte));
-    BitmapSource bitmapSource = BitmapSource.Create(
-        resizedWidth,
-        resizedHeight,
-        96.0,
-        96.0,
-        PixelFormats.Gray8,
-        BitmapPalettes.Gray256,
-        bufferRectFlatten,
-        (resizedWidth * 8 + 7) / 8);
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
 
-    image.Source = bitmapSource;
-}
-</code></pre>
-]]></content>
-    </entry>
-</feed>
+
+
+
+
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Noodlesoup</title>
+<title>python连接SQL Server数据库 | Noodlesoup</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,14 @@
 
 
 
-    <meta name="description" content="emm noodlesoup">
-    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    
+    <meta name="description" content="通常有两个库推荐，pyodbc和pymssql，pymssql对中文非常不友好
+使用pyodbc之前在电脑搜索odbc数据源管理程序
+
+点击添加新数据源
+这里会显示可用的数据源的驱动程序
+然后就可以在python里
+import pyodb..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -95,87 +99,41 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/guan-yu-wpf-de-xaml/">
-                  <h2 class="post-title">关于WPF的xaml</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/python-lian-jie-sql-server-shu-ju-ku/">
-                  <h2 class="post-title">python连接SQL Server数据库</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/li-yong-shapefile-qie-ge-yao-gan-ying-xiang-dui-ying-qu-yu-qgis-yu-python-gdal-jie-he/">
-                  <h2 class="post-title">利用shapefile切割遥感影像对应区域——QGIS与python gdal结合</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/guan-yu-gnss-he-rtk/">
-                  <h2 class="post-title">关于GNSS和RTK</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/li-yong-libtiffnet-jin-xing-bigtiff-de-du-xie/">
-                  <h2 class="post-title">利用libtiff.net进行BigTiff的读写</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">python连接SQL Server数据库</h2>
+            <div class="post-date">2021-03-31</div>
+            
+            <div class="post-content" v-pre>
+              <p>通常有两个库推荐，pyodbc和pymssql，pymssql对中文非常不友好<br>
+使用pyodbc之前在电脑搜索odbc数据源管理程序<br>
+<img src="https://zivkidd.github.io/post-images/1617197811890.png" alt="" loading="lazy"><br>
+点击添加新数据源<br>
+这里会显示可用的数据源的驱动程序<br>
+然后就可以在python里</p>
+<pre><code class="language-python">import pyodbc
+conn = pyodbc.connect('DRIVER={数据源的驱动程序如SQL Server Native Client 11.0};SERVER=IP;DATABASE=数据库名称;UID=用户名;PWD=密码')
+cur=conn.cursor()
+cur.execute('select top 1000 * from [dbo].[ZJB_TaskInfo]')
+results=cur.fetchall()
+</code></pre>
+<p>这样就可以通过发送sql语句与数据库进行交互</p>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zivkidd.github.io/post/li-yong-shapefile-qie-ge-yao-gan-ying-xiang-dui-ying-qu-yu-qgis-yu-python-gdal-jie-he/">
+                  <h3 class="post-title">
+                    利用shapefile切割遥感影像对应区域——QGIS与python gdal结合
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>

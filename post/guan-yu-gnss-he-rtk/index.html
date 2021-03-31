@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Noodlesoup</title>
+<title>关于GNSS和RTK | Noodlesoup</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,10 @@
 
 
 
-    <meta name="description" content="emm noodlesoup">
-    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    
+    <meta name="description" content="RTK采用的实时定位技术，可以在流动站随时看到测量点的坐标以及精度情况；PPK定位属于后处理定位,在现场看不到点的坐标，需要事后处理才能看到结果。
+来自 https://www.sohu.com/a/247375413_769730
+RTK..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -95,87 +95,32 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/guan-yu-wpf-de-xaml/">
-                  <h2 class="post-title">关于WPF的xaml</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/python-lian-jie-sql-server-shu-ju-ku/">
-                  <h2 class="post-title">python连接SQL Server数据库</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/li-yong-shapefile-qie-ge-yao-gan-ying-xiang-dui-ying-qu-yu-qgis-yu-python-gdal-jie-he/">
-                  <h2 class="post-title">利用shapefile切割遥感影像对应区域——QGIS与python gdal结合</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/guan-yu-gnss-he-rtk/">
-                  <h2 class="post-title">关于GNSS和RTK</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zivkidd.github.io/post/li-yong-libtiffnet-jin-xing-bigtiff-de-du-xie/">
-                  <h2 class="post-title">利用libtiff.net进行BigTiff的读写</h2>
-                </a>
-                <div class="post-date">
-                  2021-03-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">关于GNSS和RTK</h2>
+            <div class="post-date">2021-03-31</div>
+            
+            <div class="post-content" v-pre>
+              <p>RTK采用的实时定位技术，可以在流动站随时看到测量点的坐标以及精度情况；PPK定位属于后处理定位,在现场看不到点的坐标，需要事后处理才能看到结果。<br>
+来自 <a href="https://www.sohu.com/a/247375413_769730">https://www.sohu.com/a/247375413_769730</a><br>
+RTK可以自己架基站在已知点上，或者连接cors，千寻的cors价格在2000/年，可以全国通用，但在连cors时初始化需要比较久，在树木遮挡下有时候很差，所以用自己的基站比较好，精度基本在水平2cm，高度4cm<br>
+PPK不能用cors，要两个接收机，一个做基站，一个流动站，但是需要后期解算，精度很高，能到毫米</p>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zivkidd.github.io/post/li-yong-libtiffnet-jin-xing-bigtiff-de-du-xie/">
+                  <h3 class="post-title">
+                    利用libtiff.net进行BigTiff的读写
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>

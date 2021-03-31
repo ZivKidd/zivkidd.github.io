@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>利用libtiff.net进行BigTiff的读写 | Noodlesoup</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zivkidd.github.io/favicon.ico?v=1617198685857">
+<link rel="stylesheet" href="https://zivkidd.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="读入多张tif影像水平拼接成bigtiff
+using (Tiff bigTiff = Tiff.Open(@&quot;D:\desktop\test\新建文件夹 (17)\5.tif&quot;, &quot;w&quot;))
+{
+ ..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zivkidd.github.io">
+        <img src="https://zivkidd.github.io/images/avatar.png?v=1617198685857" class="site-logo">
+        <h1 class="site-title">Noodlesoup</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/ZivKidd" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      emm noodlesoup
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zivkidd.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">利用libtiff.net进行BigTiff的读写</h2>
+            <div class="post-date">2021-03-31</div>
+            
+            <div class="post-content" v-pre>
+              <p>读入多张tif影像水平拼接成bigtiff</p>
+<pre><code class="language-csharp">using (Tiff bigTiff = Tiff.Open(@&quot;D:\desktop\test\新建文件夹 (17)\5.tif&quot;, &quot;w&quot;))
+{
+    int originalImageWidth = 0, originalImageHeight = 0;
+    using (Tiff image = Tiff.Open(singleComparisonJobConfig.IntensityImageFilePathList[0], &quot;r&quot;))
+    {
+        originalImageWidth = image.GetField(TiffTag.IMAGEWIDTH)[0].ToInt();
+        originalImageHeight = image.GetField(TiffTag.IMAGELENGTH)[0].ToInt();
+    }
+
+    bigTiff.SetField(
+        TiffTag.IMAGEWIDTH,
+        singleComparisonJobConfig.IntensityImageFilePathList.Count * originalImageWidth);
+    bigTiff.SetField(TiffTag.IMAGELENGTH, originalImageHeight);
+    bigTiff.SetField(TiffTag.PHOTOMETRIC, Photometric.MINISBLACK);
+
+    bigTiff.SetField(TiffTag.BITSPERSAMPLE, 8);
+    bigTiff.SetField(TiffTag.SAMPLESPERPIXEL, 1);
+
+    // 这个参数很关键
+    // The default is 2 * *32 - 1, which is effectively infinity. That is, the entire image is one strip. 
+    // Use of a single strip is not recommended.Choose RowsPerStrip such that each strip is about 8K bytes, even if the data is not compressed, 
+    // since it makes buffering simpler for readers.The 8K value is fairly arbitrary, but seems to work well.
+    bigTiff.SetField(TiffTag.ROWSPERSTRIP, 1);
+    bigTiff.SetField(TiffTag.COMPRESSION, Compression.NONE);
+    bigTiff.SetField(TiffTag.PLANARCONFIG, PlanarConfig.CONTIG);
+
+    // TILEWIDTH TILELENGTH要是16的倍数
+    // bigTiff.SetField(TiffTag.TILEWIDTH, 5120);
+    // bigTiff.SetField(TiffTag.TILELENGTH, 10240);
+    // bigTiff.SetField(TiffTag.TILEDEPTH, 10240);
+
+    // var a = bigTiff.TileSize();
+    Tiff[] originalImages = new Tiff[singleComparisonJobConfig.IntensityImageFilePathList.Count];
+    for (int i = 0; i &lt; singleComparisonJobConfig.IntensityImageFilePathList.Count; i++)
+    {
+        originalImages[i] = Tiff.Open(singleComparisonJobConfig.IntensityImageFilePathList[i], &quot;r&quot;);
+    }
+
+    byte[] newBuff =
+        new byte[originalImageWidth * singleComparisonJobConfig.IntensityImageFilePathList.Count];
+    byte[] buffer = new byte[originalImageWidth];
+    for (int j = 0; j &lt; originalImageHeight; j++)
+    {
+        Console.WriteLine(j);
+        Console.WriteLine(DateTime.Now);
+        for (int i = 0; i &lt; singleComparisonJobConfig.IntensityImageFilePathList.Count; i++)
+        {
+            originalImages[i].ReadScanline(buffer, j);
+            Buffer.BlockCopy(buffer, 0, newBuff, i * originalImageWidth, originalImageWidth * sizeof(byte));
+        }
+
+        bigTiff.WriteScanline(newBuff, j);
+    }
+    bigTiff.WriteDirectory();
+    bigTiff.Close();
+}
+</code></pre>
+<p>strip这个参数很关键，如果文件很大，比如超过4g，不设置strip的话会导致libtiff.net报错，所以一般是一个strip为8000个byte，这样设置读的比较快<br>
+1）简单的文件，1个Strip足以。<br>
+2）每个Strip大小是相同的。<br>
+3）出于某种目的，文件可以分成若干Strip。<br>
+4）Script需要对齐处理。<br>
+5）文件有两种基本分块模式 Strip，Tile<br>
+Strip 高度方向分块<br>
+Tile  像打豆腐一样分块</p>
+<p>分块就是若干字节（若干行）写一次；<br>
+并且要记录每一块，写的位置。<br>
+Some manufacturers make life difficult by writing large amounts of uncompressed data as a single strip. This is contrary to the recommendations of the spec. The following makes an attempt at breaking such images into strips closer to the recommended 8k bytes. A side effect, however, is that the RowsPerStrip tag value may be changed.</p>
+<p>在wpf展示bigtiff（只读一些行，直接用bitmap加载会报错，所以有缩放功能时需要自己判断读入哪些行）</p>
+<pre><code class="language-csharp">using (Tiff bigTiff = Tiff.Open(@&quot;D:\desktop\test\新建文件夹 (17)\5.tif&quot;, &quot;r&quot;))
+{
+    int originalImageWidth = bigTiff.GetField(TiffTag.IMAGEWIDTH)[0].ToInt();
+    int originalImageHeight = bigTiff.GetField(TiffTag.IMAGELENGTH)[0].ToInt();
+
+    double canvasHeight = grid.Height;
+    int skip = Convert.ToInt32(originalImageHeight / canvasHeight);
+    int resizedHeight = Convert.ToInt32(canvasHeight);
+    int resizedWidth = Convert.ToInt32(originalImageWidth / skip);
+
+    byte[,] bufferRect = new byte[resizedHeight, resizedWidth];
+    byte[] buffer = new byte[originalImageWidth];
+    for (int j = 0; j &lt; originalImageHeight; j += skip)
+    {
+        bigTiff.ReadScanline(buffer, j);
+        for (int i = 0; i / skip &lt; resizedWidth; i += skip)
+        {
+            bufferRect[j / skip, i / skip] = buffer[i];
+        }
+    }
+
+    byte[] bufferRectFlatten = new byte[resizedHeight * resizedWidth];
+    Buffer.BlockCopy(bufferRect, 0, bufferRectFlatten, 0, resizedHeight * resizedWidth * sizeof(byte));
+    BitmapSource bitmapSource = BitmapSource.Create(
+        resizedWidth,
+        resizedHeight,
+        96.0,
+        96.0,
+        PixelFormats.Gray8,
+        BitmapPalettes.Gray256,
+        bufferRectFlatten,
+        (resizedWidth * 8 + 7) / 8);
+
+    image.Source = bitmapSource;
+}
+</code></pre>
+
+            </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
