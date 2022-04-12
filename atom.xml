@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zivkidd.github.io</id>
     <title>Noodlesoup</title>
-    <updated>2021-06-26T17:27:54.351Z</updated>
+    <updated>2022-04-12T11:19:42.927Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zivkidd.github.io"/>
     <link rel="self" href="https://zivkidd.github.io/atom.xml"/>
     <subtitle>emm noodlesoup</subtitle>
     <logo>https://zivkidd.github.io/images/avatar.png</logo>
     <icon>https://zivkidd.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Noodlesoup</rights>
+    <rights>All rights reserved 2022, Noodlesoup</rights>
     <entry>
         <title type="html"><![CDATA[关于WPF的xaml]]></title>
         <id>https://zivkidd.github.io/post/guan-yu-wpf-de-xaml/</id>
